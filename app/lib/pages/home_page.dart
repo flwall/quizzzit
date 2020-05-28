@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:quizzzit/models/question.dart';
@@ -33,7 +32,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    this.data=getQuestions();
+    this.data = getQuestions();
   }
 
   Future<List<Question>> getQuestions() async {
@@ -46,5 +45,17 @@ class _HomePageState extends State<HomePage> {
       questions.add(Question.fromJson(q.data));
     }
     return questions;
+  }
+}
+class QuestionContainer extends StatelessWidget {
+  final List<Question> questions;
+
+  const QuestionContainer({Key key, this.questions}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Text("Question Container"),
+    );
   }
 }
